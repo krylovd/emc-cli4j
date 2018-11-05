@@ -33,6 +33,7 @@ import com.neemre.btcdcli4j.core.domain.Tip;
 import com.neemre.btcdcli4j.core.domain.Transaction;
 import com.neemre.btcdcli4j.core.domain.TxOutSetInfo;
 import com.neemre.btcdcli4j.core.domain.WalletInfo;
+import java.util.HashMap;
 
 public interface BtcdClient {
 	
@@ -374,6 +375,27 @@ public interface BtcdClient {
 	Properties getNodeConfig();
 
 	String getNodeVersion();
+
+    String NvsNameCreate(String name, String value, int days, String address)
+            throws BitcoindException, CommunicationException;
+
+//    String NvsNameUpdate(HashMap<String, String> inMap)
+//            throws BitcoindException, CommunicationException;
+//
+//    String NvsNameDelete(HashMap<String, String> inMap)
+//            throws BitcoindException, CommunicationException;
+//
+//    List<String> NvsNameShow()
+//            throws BitcoindException, CommunicationException;
+//
+//    List<String> NvsNameList()
+//            throws BitcoindException, CommunicationException;
+//
+//    List<String> NvsNameScan()
+//            throws BitcoindException, CommunicationException;
+//
+//    List<String> NvsNameFilter()
+//            throws BitcoindException, CommunicationException;
 
 	void close();
 }

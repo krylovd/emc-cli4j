@@ -88,7 +88,16 @@ public enum Commands {
 	VERIFY_MESSAGE("verifymessage", 3, 3),
 	WALLET_LOCK("walletlock", 0, 0),
 	WALLET_PASSPHRASE("walletpassphrase", 2, 2),
-	WALLET_PASSPHRASE_CHANGE("walletpassphrasechange", 2, 2);
+	WALLET_PASSPHRASE_CHANGE("walletpassphrasechange", 2, 2),
+
+        NAME_NEW("name_new"),
+        NAME_UPDATE("name_update"),
+        NAME_DELETE("name_delete"),
+        NAME_SHOW("name_show"),
+        NAME_LIST("name_list"),
+        NAME_SCAN("name_scan"),
+        NAME_FILTER("name_filter");
+                
 
 	private final String name;
 	private final int minParams;

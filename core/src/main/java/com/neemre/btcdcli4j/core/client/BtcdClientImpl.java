@@ -1258,6 +1258,48 @@ public class BtcdClientImpl implements BtcdClient {
 		LOG.info(">> close(..): closing the 'bitcoind' core wrapper");
 		rpcClient.close();
 	}
+        
+        @Override
+        public String NvsNameCreate(String name, String value, int days, String address) {
+            List<Object> params = CollectionUtils.asList(name, value, days);
+        String addressInfoJson = rpcClient.execute(Commands.NAME_NEW.getName(), params);
+        return addressInfoJson;
+    }
+     
+//    @Override    
+//    public String NvsNameUpdate() {
+//       String addressInfoJson = rpcClient.execute(Commands.VALIDATE_ADDRESS.getName(), address);
+//    }
+//
+//    @Override
+//    public String NvsNameDelete() {
+//        result = new NvsResult();
+//        return result;
+//    }
+//
+//    @Override
+//    public List<String> NvsNameShow() {
+//        result = new NvsResult();
+//        return result;
+//    }
+//
+//    @Override
+//    public List<String> NvsNameList() {
+//        result = new NvsResult();
+//        return result;
+//    }
+//
+//    @Override
+//    public List<String> NvsNameScan() {
+//        result = new NvsResult();
+//        return result;
+//    }
+//
+//    @Override
+//    public List<String> NvsNameFilter() {
+//        result = new NvsResult();
+//        return result;
+//    }
 
 	private void initialize() {
 		LOG.info(">> initialize(..): initiating the 'bitcoind' core wrapper");
